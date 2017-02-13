@@ -1,0 +1,30 @@
+﻿<Window x:Class="SimpleClock.Gui.Views.History"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleClock.Gui.Views"
+        mc:Ignorable="d"
+        Title="History" Height="300" Width="300">
+    <Grid>
+        <ListView x:Name="lvwHistory" HorizontalAlignment="Left" Height="204" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Waktu"/>
+                    <GridViewColumn Header="Kategori"/>
+                    <GridViewColumn Header="Kegiatan"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Description}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="button" Content="Mulai Sesi" HorizontalAlignment="Left" Margin="206,219,0,0" VerticalAlignment="Top" Width="76" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="Eskpor" HorizontalAlignment="Left" Margin="125,219,0,0" VerticalAlignment="Top" Width="76"/>
+
+    </Grid>
+</Window>
