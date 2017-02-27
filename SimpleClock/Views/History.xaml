@@ -5,26 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleClock.Gui.Views"
         mc:Ignorable="d"
-        Title="History" Height="300" Width="300">
+        Title="History" Height="273.305" Width="300">
     <Grid>
-        <ListView x:Name="lvwHistory" HorizontalAlignment="Left" Height="204" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Row="0" x:Name="lvwHistory" Margin="10,10,10,10" VerticalAlignment="Stretch" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Waktu"/>
-                    <GridViewColumn Header="Kategori"/>
-                    <GridViewColumn Header="Kegiatan"/>
+                    <GridViewColumn Header="Waktu" DisplayMemberBinding="{Binding StartedAt}" />
+                    <GridViewColumn Header="Kategori" DisplayMemberBinding="{Binding Category}" />
+                    <GridViewColumn Header="Kegiatan" DisplayMemberBinding="{Binding Description}" />
                 </GridView>
             </ListView.View>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="{Binding Description}" />
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="button" Content="Mulai Sesi" HorizontalAlignment="Left" Margin="206,219,0,0" VerticalAlignment="Top" Width="76" Click="button_Click"/>
-        <Button x:Name="button_Copy" Content="Eskpor" HorizontalAlignment="Left" Margin="125,219,0,0" VerticalAlignment="Top" Width="76"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="button_Copy" Content="Eskpor" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Padding="10,0,10,0"/>
+            <Button x:Name="button" Content="Mulai Sesi" HorizontalAlignment="Left" VerticalAlignment="Top" Click="button_Click" Margin="10,10,10,10" Padding="10,0,10,0"/>
+        </StackPanel>
 
     </Grid>
 </Window>

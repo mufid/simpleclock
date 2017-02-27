@@ -25,7 +25,6 @@ namespace SimpleClock.Gui.Views
         {
             InitializeComponent();
             LoadData();
-            ActivityHistory = new ObservableCollection<Models.Activity>();
             lvwHistory.ItemsSource = ActivityHistory;
         }
 
@@ -36,6 +35,8 @@ namespace SimpleClock.Gui.Views
         public void LoadData()
         {
             var storage = new Services.PersistentStorage();
+            var historyFromDb = storage.Db.Table<Models.Activity>().ToArray();
+            ActivityHistory = new ObservableCollection<Models.Activity>(historyFromDb);
             storage.Initialize();
             storage.Dispose();
         }
@@ -49,7 +50,7 @@ namespace SimpleClock.Gui.Views
                 Description = $"Super duper {Iteration++}"
             };
             ActivityHistory.Add(act);
-            // storage.Db.Insert(act);
+            storage.Db.Insert(act);
         }
     }
 }

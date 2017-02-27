@@ -1,8 +1,7 @@
-﻿<Application x:Class="SimpleClock.App"
+﻿<Application x:Class="SimpleClock.Gui.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:SimpleClock"
-             StartupUri="Views/History.xaml">
+             xmlns:local="clr-namespace:SimpleClock">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

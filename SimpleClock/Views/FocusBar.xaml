@@ -1,9 +1,9 @@
-﻿<Window x:Class="SimpleClock.Views.FocusBar"
+﻿<Window x:Class="SimpleClock.Gui.Views.FocusBar"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SimpleClock.Views"
+        xmlns:local="clr-namespace:SimpleClock.Gui.Views"
         mc:Ignorable="d"
         Title="FocusBar" Height="58.475" Width="489.407" ShowInTaskbar="False" Topmost="True" WindowStyle="None">
     <Grid>

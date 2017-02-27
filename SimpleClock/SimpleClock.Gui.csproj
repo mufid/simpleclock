@@ -84,7 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\InvertedVisibilityValueConverter.cs" />
+    <Compile Include="Converters\VisibilityValueConverter.cs" />
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Services\FocusService.cs" />
     <Compile Include="Services\PersistentStorage.cs" />
     <Compile Include="Views\FocusBar.xaml.cs">
       <DependentUpon>FocusBar.xaml</DependentUpon>

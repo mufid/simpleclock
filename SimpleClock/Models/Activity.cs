@@ -12,7 +12,7 @@ namespace SimpleClock.Gui.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public DateTime StartedAt { get; set; }
-        public DateTime FinishedAt { get; set; }
+        public DateTime? FinishedAt { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Description { get; set; }
     }
