@@ -47,10 +47,15 @@ namespace SimpleClock.Gui.Views
             var act = new Models.Activity()
             {
                 StartedAt = DateTime.Now,
-                Description = $"Super duper {Iteration++}"
             };
+            // TODO insert via focus
             ActivityHistory.Add(act);
             storage.Db.Insert(act);
+
+            var focus = new Services.FocusService(storage);
+            var activity = focus.RetrieveCurrentActivity();
+            new FocusBar(activity).Show();
+            Close();
         }
     }
 }

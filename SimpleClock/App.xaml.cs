@@ -18,6 +18,8 @@ namespace SimpleClock.Gui
             base.OnStartup(e);
 
             var storage = new Services.PersistentStorage();
+            storage.Initialize();
+
             var focus = new Services.FocusService(storage);
 
             if (focus.IsFocus)
